@@ -1,0 +1,3 @@
+git add temperaturas.py
+git commit -m "Agregar función para calcular temperaturas promedio por ciudad"
+git push origin main
