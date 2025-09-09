@@ -1,0 +1,76 @@
+temperaturas = [
+    [22, 23, 21, 24],  # Ciudad A
+    [28, 27, 29, 30],  # Ciudad B
+    [15, 17, 16, 14],  # Ciudad C
+]
+def calcular_temperaturas_promedio(datos_temperatura):
+    """
+    Calcula la temperatura promedio de cada ciudad a partir de una lista de temperaturas semanales.
+
+    Parámetros:
+    datos_temperatura (list of list of floats/ints): Lista de temperaturas por ciudad.
+        Cada sublista representa una ciudad y contiene las temperaturas de varias semanas.
+
+    Retorna:
+    list of floats: Lista de temperaturas promedio por ciudad.
+    """
+
+    promedios = []
+
+    for ciudad_temperaturas in datos_temperatura:
+        if len(ciudad_temperaturas) == 0:
+            promedios.append(None)  # Manejo de ciudad sin datos
+        else:
+            promedio = sum(ciudad_temperaturas) / len(ciudad_temperaturas)
+            promedios.append(promedio)
+
+    return promedios
+# Datos de ejemplo: 3 ciudades, 4 semanas
+temperaturas = [
+    [22, 23, 21, 24],  # Ciudad A
+    [28, 27, 29, 30],  # Ciudad B
+    [15, 17, 16, 14],  # Ciudad C
+]
+
+# Llamada a la función
+resultados = calcular_temperaturas_promedio(temperaturas)
+
+# Mostrar resultados
+for i, promedio in enumerate(resultados):
+    print(fa
+Fecha: 9/9/2025
+"""
+
+def calcular_temperaturas_promedio(datos_temperatura, nombres_ciudades=None):
+    """
+    Calcula la temperatura promedio de cada ciudad a partir de una lista de temperaturas semanales.
+
+    Parámetros:
+    datos_temperatura (list of list of floats/ints): Lista de temperaturas por ciudad.
+        Cada sublista representa una ciudad y contiene las temperaturas de varias semanas.
+    nombres_ciudades (list of str): Nombres opcionales de las ciudades. Debe tener la misma longitud
+        que datos_temperatura si se proporciona.
+
+    Retorna:
+    list of tuples: Cada tupla contiene (nombre_ciudad, temperatura_promedio)
+    """
+
+    resultados = []
+
+    for i, ciudad_temperaturas in enumerate(datos_temperatura):
+        if len(ciudad_temperaturas) == 0:
+            promedio = None  # Si no hay datos, no se puede calcular promedio
+        else:
+            promedio = sum(ciudad_temperaturas) / len(ciudad_temperaturas)
+
+        nombre = f"Ciudad {i + 1}" if not nombres_ciudades else nombres_ciudades[i]
+        resultados.append((nombre, promedio))
+
+    return resultados
+
+
+# ----------------------
+# Prueba del funcionamiento
+# ----------------------"Ciudad {i + 1}: Promedio = {promedio:.2f}°C")
+
+"""
